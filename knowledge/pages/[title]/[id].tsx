@@ -11,6 +11,7 @@ import LinkedNodes from "../../components/LinkedNodes";
 import NodeItem from "../../components/NodeItem";
 import NodeItemContributors from "../../components/NodeItemContributors";
 import ReferencesList from "../../components/ReferencesList";
+import TagsList from "../../components/TagsList";
 
 type Props = {
   node: KnowledgeNode;
@@ -51,6 +52,7 @@ export const getServerSideProps: GetServerSideProps<Props, Params> = async ({ re
 };
 
 const NodePage: NextPage<Props> = ({ node, keywords, createdStr, updatedStr }) => {
+  console.log('node',node,keywords)
   return (
     <PagesNavbar title={`1Cademy - ${node.title}`}>
       <NodeHead node={node} keywords={keywords} createdStr={createdStr} updatedStr={updatedStr} />
@@ -66,6 +68,7 @@ const NodePage: NextPage<Props> = ({ node, keywords, createdStr, updatedStr }) =
             }
           />
           <ReferencesList references={node.references || []} sx={{ mt: 3 }} />
+          <TagsList tags={node.tags || []} sx={{mt:3}}/>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
           <LinkedNodes data={node.children || []} header="Learn After" />

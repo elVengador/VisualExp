@@ -18,9 +18,7 @@ type Props = {
 const ReferencesList: FC<Props> = ({ references, sx }) => {
   console.log("references", references);
   const getReferenceTitle = (el: LinkedKnowledgeNode) => {
-    if (!isValidHttpUrl(el.label)) {
-      return `${el.title}:  ${el.label}`;
-    }
+    if (isValidHttpUrl(el.label)) { return `${el.title}:  ${el.label}`}
     return el.title || "";
   };
   return (

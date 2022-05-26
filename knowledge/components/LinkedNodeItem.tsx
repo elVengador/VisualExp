@@ -43,7 +43,7 @@ const LinkedNodeItem: FC<Props> = ({
       placement="left"
     >
       <ListItemButton component="a" href={linkSrc}>
-        {showListItemIcon && (
+        { (
           <ListItemIcon>
             <NodeTypeIcon nodeType={nodeType} />
           </ListItemIcon>
