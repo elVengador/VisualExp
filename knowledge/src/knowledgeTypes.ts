@@ -108,7 +108,6 @@ export type KnowledgeNode = Omit<
   tags?: LinkedKnowledgeNode[];
   createdAt?: string;
   choices?:KnowledgeChoice[];
-  constent?:string;
   references?: LinkedKnowledgeNode[];
   contributors?: KnowledgeNodeContributor[];
   institutions?: KnowledgeNodeInstitution[];
